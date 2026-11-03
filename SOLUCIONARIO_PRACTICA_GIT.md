@@ -43,17 +43,25 @@
 
 ### Solución Pregunta 13: Concurrencia en la Misma Rama y Sincronización Tripartita
 * **Desarrollador A**:
-  Edita `index.html` (Película 1: Solo en Casa).
+  Edita `index.html` (Película 1: portada `assets/Solo en casa.jpeg` y título `Solo en Casa`):
+  ```html
+  <img src="assets/Solo en casa.jpeg" alt="Solo en Casa" loading="lazy">
+  <h4 class="movie-title">Solo en Casa</h4>
+  ```
   ```bash
   git add index.html
-  git commit -m "feat: anadir Solo en Casa a cartelera"
+  git commit -m "feat: anadir Solo en Casa y portada a cartelera"
   git push origin feature/cartelera-navidad
   ```
 * **Desarrollador B**:
-  Edita `index.html` (Película 2: El Grinch).
+  Edita `index.html` (Película 2: portada `assets/The Grinch.jpeg` y título `El Grinch`):
+  ```html
+  <img src="assets/The Grinch.jpeg" alt="El Grinch" loading="lazy">
+  <h4 class="movie-title">El Grinch</h4>
+  ```
   ```bash
   git add index.html
-  git commit -m "feat: anadir El Grinch a cartelera"
+  git commit -m "feat: anadir El Grinch y portada a cartelera"
   git push origin feature/cartelera-navidad
   # Recibe el error: [rejected] (fetch first)
   git pull origin feature/cartelera-navidad

@@ -34,18 +34,24 @@ El equipo divide el desarrollo en dos ramas principales:
 ### Pregunta 13: Concurrencia en la Misma Rama y Sincronización Tripartita (Tiempo: 7 min)
 **A** y **B** van a trabajar de forma concurrente sobre la misma rama, mientras **C** observa e inspecciona el flujo de sincronización:
 
-1. **Desarrollador A**: En `feature/cartelera-navidad`, modifica en `index.html` el título de la Película 1:
+1. **Desarrollador A**: En `feature/cartelera-navidad`, modifica en `index.html` la portada y título de la Película 1 utilizando la imagen de `assets/`:
+   ```html
+   <img src="assets/Solo en casa.jpeg" alt="Solo en Casa" loading="lazy">
+   ```
    ```html
    <h4 class="movie-title">Solo en Casa</h4>
    ```
    Añade el cambio, confírmalo con un mensaje descriptivo y súbelo a GitHub.
-2. **Desarrollador B**: En tu máquina (sin haber descargado el cambio de A), cambia en `index.html` el título de la Película 2:
+2. **Desarrollador B**: En tu máquina (sin haber descargado el cambio de A), modifica en `index.html` la portada y título de la Película 2 utilizando la imagen de `assets/`:
+   ```html
+   <img src="assets/The Grinch.jpeg" alt="El Grinch" loading="lazy">
+   ```
    ```html
    <h4 class="movie-title">El Grinch</h4>
    ```
    Añade y confirma el cambio con un mensaje descriptivo. Intenta subir tu rama a GitHub y lee el error de rechazo.
 3. **Desarrollador B**: Trae e integra los cambios remotos de A a tu rama local (observa la unión automática que realiza Git) y vuelve a subir la rama a GitHub.
-4. **Desarrollador C y Desarrollador A**: Descargan y sincronizan en sus copias locales (`git fetch` / `git pull`) y verifican con el registro de commits que la rama `feature/cartelera-navidad` ya contiene las dos películas unificadas.
+4. **Desarrollador C y Desarrollador A**: Descargan y sincronizan en sus copias locales (`git fetch` / `git pull`) y verifican con el registro de commits que la rama `feature/cartelera-navidad` ya contiene las dos películas con sus portadas unificadas.
 
 > 💡 **Pistas (Comandos útiles)**: `git add <archivo>`, `git commit -m "..."`, `git push origin <rama>`, `git pull origin <rama>`, `git log --oneline -n 3`.
 
