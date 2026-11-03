@@ -1,5 +1,5 @@
 # 🎬 Práctica de Git Avanzado: Transición Navideña en Commit-Cinema
-## Guión Oficial de Preguntas (11 a 20) — Participación Activa de los 3 Integrantes
+## Guión Oficial de Preguntas (11 a 20)
 
 ### Contexto y Metodología de Trabajo en Equipo
 La web del cine **Commit-Cinema** finaliza su campaña de Halloween y debe transformarse en la **Campaña de Navidad**.
@@ -10,7 +10,7 @@ Cada grupo estará formado por **3 integrantes (Desarrollador A, B y C)**.
 ---
 
 ### Pregunta 11: Fork del Proyecto, Clonación y Configuración Tripartita (Tiempo: 6 min)
-1. **Desarrollador A**: Accede a `https://github.com/anlime10/Commit-Cinema`, realiza un **Fork** hacia la cuenta/organización del grupo y añade inmediatamente a **B** y **C** como colaboradores con permisos de escritura (*Settings -> Collaborators*).
+1. **Desarrollador A**: Accede a `https://github.com/anlime10/Commit-Cinema`, realiza un **Fork marcando la casilla de solo traer branch main** hacia la cuenta/organización del grupo y añade inmediatamente a **B** y **C** como colaboradores con permisos de escritura (*Settings -> Collaborators*).
 2. **Desarrollador B y C**: Aceptan la invitación por correo/GitHub y confirman que tienen acceso al Fork.
 3. **Desarrolladores A, B y C**: Cada uno clona en su máquina local **el Fork de su propio grupo** (no el del profesor).
 4. **Desarrolladores A, B y C**: Cada alumno configura su identidad local (`user.name` y `user.email`).
