@@ -16,18 +16,18 @@ Cada grupo estará formado por **3 integrantes (Desarrollador A, B y C)**.
 4. **Desarrolladores A, B y C**: Cada alumno configura su identidad local (`user.name` y `user.email`).
 5. **Desarrolladores A, B y C**: Todos añaden el repositorio original del profesor (`https://github.com/anlime10/Commit-Cinema.git`) como remoto secundario `upstream` y listan sus remotos para comprobar que disponen de `origin` y `upstream`.
 
-> 💡 **Pistas (Comandos útiles)**: `git clone`, `git config user.name`, `git config user.email`, `git remote add <nombre> <url>`, `git remote -v`.
+> 💡 **Pistas (Comandos útiles)**: `git clone`, `git config user.name`, `git config user.email`, `git remote add <nombre (normalmente upstream)> <url> (añade al upstream el repositorio padre del fork para mantener actualizados posibles cambios que se hagan en el repositorio padre del fork)` , `git remote -v (lista los remotos)`.
 
 ---
 
 ### Pregunta 12: Distribución y Creación de Ramas de Trabajo (Tiempo: 4 min)
 El equipo divide el desarrollo en dos ramas principales:
 1. **Desarrollador A**: Crea en su equipo local la rama `feature/cartelera-navidad` y la sube al repositorio remoto en GitHub vinculando el seguimiento upstream.
-2. **Desarrollador B**: Actualiza las referencias remotas desde GitHub, comprueba qué ramas existen en el servidor y cámbiate a la rama `feature/cartelera-navidad` para trabajar junto a A.
+2. **Desarrollador B**: Actualiza las referencias remotas desde GitHub (fetch), comprueba qué ramas existen en el servidor y cámbiate a la rama `feature/cartelera-navidad` para trabajar junto a A.
 3. **Desarrollador C**: Desde `main`, crea su propia rama llamada `feature/decoracion-navidad`, cámbiate a ella y súbela al remoto en GitHub.
 4. **Comprobación conjunta (A, B y C)**: Los tres ejecutan el comando para listar todas las ramas (locales y remotas) y confirman que ambos frentes de trabajo están visibles en sus terminales.
 
-> 💡 **Pistas (Comandos útiles)**: `git checkout -b <rama>`, `git push -u origin <rama>`, `git fetch`, `git checkout <rama>`, `git branch -a`.
+> 💡 **Pistas (Comandos útiles)**: `git checkout -b <rama>`, `git push -u origin <rama>, -u es el abreviamiento de --set-upstrem lo que hace que la rama origin se asocie a las nuevas`, `git fetch`, `git checkout <rama>`, `git branch -a (muestra todas las ramas y estados.)`.
 
 ---
 
@@ -51,7 +51,7 @@ El equipo divide el desarrollo en dos ramas principales:
    ```
    Añade y confirma el cambio con un mensaje descriptivo. Intenta subir tu rama a GitHub y lee el error de rechazo.
 3. **Desarrollador B**: Trae e integra los cambios remotos de A a tu rama local (observa la unión automática que realiza Git) y vuelve a subir la rama a GitHub.
-4. **Desarrollador C y Desarrollador A**: Descargan y sincronizan en sus copias locales (`git fetch` / `git pull`) y verifican con el registro de commits que la rama `feature/cartelera-navidad` ya contiene las dos películas con sus portadas unificadas.
+4. **Desarrollador C y Desarrollador A**: Descargan y sincronizan en sus copias locales (`git fetch` / `git pull`) y verifican con el registro de commits (logs) que la rama `feature/cartelera-navidad` ya contiene las dos películas con sus portadas unificadas `git log --oneline -n 3`.
 
 > 💡 **Pistas (Comandos útiles)**: `git add <archivo>`, `git commit -m "..."`, `git push origin <rama>`, `git pull origin <rama>`, `git log --oneline -n 3`.
 
@@ -77,7 +77,7 @@ Los tres integrantes deben comprender el uso de la pila temporal:
    ```html
    <span class="tag-badge">ESTRENO EXCLUSIVO</span>
    ```
-2. **Desarrollador A**: Sin hacer commit, comprueba el estado con `git status`. Guarda temporalmente los cambios en la pila con un mensaje identificativo (`WIP...`) y verifica que el espacio de trabajo ha quedado limpio.
+2. **Desarrollador A**: Sin hacer commit, comprueba el estado con `git status`. Guarda temporalmente los cambios en la pila (git stash) con un mensaje identificativo (`WIP...`) y verifica que el espacio de trabajo ha quedado limpio.
 3. **Desarrollador B y C**: Indican a Desarrollador A qué comandos debe ejecutar para:
    * Listar el contenido guardado en la pila.
    * Restaurar y extraer los cambios de vuelta al fichero `index.html`.
@@ -89,8 +89,6 @@ Los tres integrantes deben comprender el uso de la pila temporal:
 ---
 
 ### Pregunta 16: El Conflicto de Fusión a Tres Bandas (Merge Conflict) (Tiempo: 10 min)
-Vamos a provocar deliberadamente un conflicto en la misma línea del Hero Banner en `index.html` y los tres integrantes participarán en su resolución:
-
 1. **Desarrollador A**: En `feature/cartelera-navidad`, cambia la línea del título en `index.html`:
    ```html
    <h2 class="hero-title">Festival de Cine Navideño Familiar</h2>
@@ -124,7 +122,7 @@ Vamos a provocar deliberadamente un conflicto en la misma línea del Hero Banner
    activeDiscountCode: 'NAVIDAD2026',
    ```
    Añade el archivo y confirma con el mensaje: `"feat(promo): activar codigo promocional NAVIDAD2026"`. Sube la rama experimental a GitHub.
-3. **Desarrollador A y C**: Descargan las referencias con `git fetch` y consultan el historial de la rama `origin/experimento/promo` para localizar y dictarle a Desarrollador A el identificador (hash corto) del commit de la promo.
+3. **Desarrollador A y C**: Descargan las referencias con `git fetch` y consultan el historial de la rama `origin/experimento/promo` para localizar (git log) y dictarle a Desarrollador A el identificador (hash corto) del commit de la promo.
 4. **Desarrollador A**: Estando en la rama `main`, aplica **únicamente ese commit concreto** mediante `cherry-pick` (sin fusionar toda la rama experimental) y sube la rama `main` a GitHub.
 5. **Desarrollador B y C**: Actualizan su rama `main` con `git pull` y comprueban en `js/main.js` que el código de descuento navideño ya está disponible en producción.
 
