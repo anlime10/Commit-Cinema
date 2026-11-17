@@ -10,9 +10,9 @@
     --header-bg: rgba(14, 11, 20, 0.95);
     
     /* Colores temáticos de Halloween */
-    --theme-color-primary: #ff6f00;      /* Naranja calabaza */
-    --theme-color-secondary: #9c27b0;    /* Morado oscuro bruja */
-    --theme-color-accent: #00e676;       /* Verde ectoplasma */
+    --theme-color-primary: #c62828; /* Rojo Papa Noel */
+    --theme-color-secondary: #2e7d32; /* Verde pino */
+    --theme-color-accent: #fbc02d; /* Dorado festivo */
     --theme-color-blood: #d50000;        /* Rojo sangre */
     
     --text-primary: #f5f5f7;

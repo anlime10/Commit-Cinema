@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuración actual de temporada
     const APP_CONFIG = {
         season: 'HALLOWEEN',
-        activeDiscountCode: 'SPOOKY2026',
+        activeDiscountCode: 'NAVIDAD2026',
         discountPercentage: 15
     };
 
